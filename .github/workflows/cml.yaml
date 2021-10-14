@@ -29,6 +29,6 @@ jobs:
           echo "## VISUALISASI DATA" >> report.md
           cml-publish histogram_kata.png --md >> report.md
           cml-publish top15.png --md >> report.md
-          cml-publish wordcloud.png >> report.md
+          cml-publish wordcloud.png --md >> report.md
 
           cml-send-comment report.md
