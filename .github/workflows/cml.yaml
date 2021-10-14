@@ -20,5 +20,12 @@ jobs:
           # Your ML workflow goes here
           pip install -r requirements.txt
           python train.py
-          echo "METRIK MODEL"
-          cat metrics.txt
+          echo "## METRIK MODEL" >> report.md
+          cat metrics.txt >> report.md
+
+          echo "## VISUALISASI DATA" >> report.md
+          cml-publish histogram_kata.png --md >> report.md
+          cml-publish top15.png --md >> report.md
+          cml-publish wordcloud.png >> report.md
+
+          cml-send-comment report.md
